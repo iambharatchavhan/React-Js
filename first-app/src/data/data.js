@@ -12,6 +12,6 @@ const Data = () => {
     //   console.log(data.name)
     })
 }
-console.log(poke);
-// console.log(Data());
+// console.log(poke);
+
 export default Data;

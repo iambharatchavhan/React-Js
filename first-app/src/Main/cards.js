@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactDOM } from "react";
 
-const Cards = ()=> {
+const Cards = (img)=> {
     return(
     <div className="card">
     <div className="image">
