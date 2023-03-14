@@ -1,7 +1,7 @@
 import React from "react";
 import { ReactDOM } from "react";
 
-const Cards = (img)=> {
+const Cards = ({name})=> {
     return(
     <div className="card">
     <div className="image">
@@ -10,7 +10,7 @@ const Cards = (img)=> {
       </div>
     </div>
     <div className="info">
-      <h2>Pikachu</h2>
+      <h2>{name}</h2>
       <p>Electron</p>
     </div>
     <div className="info2">

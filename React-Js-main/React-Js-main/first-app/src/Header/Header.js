@@ -18,7 +18,7 @@ const Header = () =>{
     <input type="search" className='search' placeholder='Search bye name' value={searchInput} onChange = {(e) => {
       // searchInput = e.target.value
       setSearchInput(e.target.value)
-      console.log(searchInput);
+      // console.log(searchInput);
     }} ></input>
     <button className='btn'>&#128269;</button>
   </nav>
