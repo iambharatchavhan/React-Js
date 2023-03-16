@@ -4,6 +4,7 @@ import Header from './Header/Header'
 import { Footer } from './Footer/footer'
 import MainBody from './MainBody/mainBody'
 import "./MainBody/style.css"
+import { Container1 } from './MainBody/mainBody'
 
 
 
@@ -11,7 +12,7 @@ const Body = () => {
     return (
         <>
         <Header/>
-       <MainBody/>
+       <Container1/>
         <Footer/>
         </>
         

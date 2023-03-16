@@ -1,24 +1,66 @@
+import React from 'react'
+import { useState, useEffect } from 'react'
 
-import  ReactDOM  from 'react-dom/client'
-import CardContainer from './cardContainer'
 
-// console.log( Data());
+export const Container1 = () => {
 
-const MainBody = () => {
+    const [pokemonName, setPokemonName] = useState([])
+    const [pokemonImgURL, setPokemonImgURL] = useState([])
+
+    useEffect(() => {  getPokemonData() }, [] )
+    useEffect(() => { getPokemonImages() }, [pokemonImgURL] )
+
+    function getPokemonImages () {
+
+        // const imagePromises = pokemonImgURL.map( async (urls) => {
+
+        //     const response = await fetch(urls)
+           
+        //     return response.json()
+
+        // } )
+
+        const imagePromises = pokemonImgURL.map( urls => fetch(urls).then( response => response.json() ) )
+
+        const arr = []
+
+        Promise.all(imagePromises).then(objectsData => objectsData.map( (obj) => {
+            console.log(arr);
+            return arr.push(obj.sprites.other.dream_world.front_default)
+       
+        } ))
+
+    }
    
-  
+    async function getPokemonData () {
 
-  return (
-    <>
-    
+        const data = await fetch('https://pokeapi.co/api/v2/pokemon?limit=30&offset=0')
+
+        const jsonData = await data.json()
+        
+        const pokemonData = jsonData.results
+       
+        return pokemonData
+
+        const pokemonNames = pokemonData.map((pokemon) => {
+            return pokemon.name
+        })   
+        setPokemonName(pokemonNames)
+
+        const pokemonImgURLS = pokemonData.map((pokemon) => {
+            return pokemon.url
+        })
+
+        setPokemonImgURL(pokemonImgURLS)
+        console.log(pokemonImgURLS);
+        
+ }
+
+ return (<>
  
-    <div className="wrapper">
-      <CardContainer/>
-      </div>
-  
-    </>
-  )
+    <h1>Hello </h1>
+      </>)
 
 }
-// Data();
-export default MainBody;
+
+
