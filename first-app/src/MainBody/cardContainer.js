@@ -5,10 +5,6 @@ import Card from './card'
 
 const CardContainer = () => {
 
-
-
-  
-
   return (
     <div className="cards-container">
         

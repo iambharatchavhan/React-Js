@@ -1,10 +1,12 @@
 import React from "react";
 import { ReactDOM } from "react";
-
+import ChoiceCarousel from "./ChoiceCrsl";
 
  const BodyContainer = () => {
   return(
-     <h1>body container</h1>
+     <>
+     <ChoiceCarousel/>
+     </>
   )
 
 }

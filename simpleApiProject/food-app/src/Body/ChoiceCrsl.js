@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async Await</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="./asynch.js"></script>
-</head>
-<body style="background-color: rgb(105, 106, 106);">
-    <div class="easyChoice">
+import React from "react";
+import { ReactDOM } from "react";
+import "./choicecrls.css"
+
+
+ const ChoiceCarousel = () => {
+  return(
+ 
+        <div class="easyChoice">
     <div class="food-card">
         <div class="item-image">
             <img src="https://image.shutterstock.com/z/stock-photo-three-mexican-pork-carnitas-tacos-flat-lay-composition-439553026.jpg"/>
@@ -84,6 +81,8 @@
         
     </div>
 </div>
+ 
+  )
 
-</body>
-</html>
+}
+export default ChoiceCarousel;
