@@ -1,0 +1,81 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 2rem;
+    /* border-bottom: 1px solid #b4b2ac; */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+  }
+  
+  
+  .logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+  
+  }
+  #logoName{
+    font-size: 1.8rem;
+    font-weight: 600;
+    color:#CB2731 ;
+  }
+  .logo img{
+    width: 4rem;
+  }
+  .searchContainer{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40rem;
+  }
+  .searchContainer ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    font-size: 1.3rem;
+    gap: 2rem;
+  }
+  .searchContainer ul li:hover{
+    color: #FFB421;
+    cursor: pointer;
+    transition: all .5s ease;
+  }
+  .searchContainer img{
+    width: 1.5rem;
+    margin: 0 .5rem;
+  }
+  .search{
+    padding: 1rem;
+    border-radius:1.5rem;
+    border: none;
+    outline: none;
+    border: 1px solid #FFCB05;
+    color: #125696;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+  }
+  .search::placeholder{
+    color: #125696;
+    font-weight: 700;
+  }
+  .btn{
+    border: 1px solid #125696;
+    margin-left: 2rem;
+    padding: .5rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    background-color:#FFCB05 ;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  .btn:hover{
+    background-color:#ffe88e;
+    transition: all 1s ease;
+  
+  }
+  
