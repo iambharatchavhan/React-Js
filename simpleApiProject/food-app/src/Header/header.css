@@ -4,7 +4,7 @@
     align-items: center;
     padding: .5rem 2rem;
     /* border-bottom: 1px solid #b4b2ac; */
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 5px;
+    box-shadow: rgba(218, 218, 218, 0.24) 0px 3px 5px;
   }
   
   
@@ -16,7 +16,7 @@
   
   }
   #logoName{
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
     color:#CB2731 ;
   }
@@ -35,8 +35,9 @@
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     gap: 2rem;
+  
   }
   .searchContainer ul li:hover{
     color: #FFB421;
@@ -44,7 +45,7 @@
     transition: all .5s ease;
   }
   .searchContainer img{
-    width: 1.5rem;
+    width: 1.2rem;
     margin: 0 .5rem;
   }
   .search{

@@ -1,0 +1,75 @@
+
+
+.card {
+    border-radius: 5px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(80, 80, 80, 0.1);
+    margin: auto;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all .5s ease-in-out;
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card .info {
+    padding: 1rem;
+  }
+
+  .card h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .card .cuisine {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+
+  .card .price {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+
+  .card .ratings {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .card .ratings .stars {
+    font-size: 1.1rem;
+    color: #ffbf00;
+    margin-right: 0.5rem;
+  }
+
+  .card .ratings .count {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+
+  .card button {
+    border: none;
+    background-color: #ed1c24;
+    color: white;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+
+  .card button:hover {
+    background-color: #F8CE29;
+  }

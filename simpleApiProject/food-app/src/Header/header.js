@@ -2,10 +2,10 @@ import React from "react";
 import { ReactDOM } from "react";
 import "./header.css"
 import logo from './logoFood.png'
-import offer from './reduction.png'
-import help from './help.png'
-import login from './login.png'
-import cart from './shopping-cart.png'
+import offer from './gift.png'
+import help from './live-chat.png'
+import login from './user.png'
+import cart from './grocery-store.png'
 
 
 // import { useState } from "react";
