@@ -2,9 +2,10 @@
 
 .card {
     border-radius: 5px;
-    max-width: 300px;
+    min-width: 300px;
     box-shadow: 0 4px 8px 0 rgba(80, 80, 80, 0.1);
     margin: auto;
+    margin:0 1rem;
     font-family: Arial, sans-serif;
     overflow: hidden;
   }

@@ -28,14 +28,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40rem;
+    width: 3+0rem;
   }
   .searchContainer ul{
     display: flex;
     justify-content: center;
     align-items: center;
     list-style-type: none;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     gap: 2rem;
   
   }

@@ -1,4 +1,4 @@
-html {
+/* html {
     font-size: 100%;
   }
   
@@ -11,7 +11,7 @@ html {
     background-color: #f4f4f4;
     align-items: start;
     min-height: 100vh;
-  }
+  } */
   
   .footer {
     display: flex;

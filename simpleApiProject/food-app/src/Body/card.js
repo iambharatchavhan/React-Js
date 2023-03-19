@@ -5,21 +5,24 @@ import "./card.css"
 
 
 
-const Card = () => {
+const Card = ({prop}) => {
+     console.log(prop);
+     const {strMealThumb,strMeal,strArea,strTags} = prop
+    //  console.log(strMealThumb,strMeal,strArea);
     return(
     
      
      <div className="card">
-      <img src="https://source.unsplash.com/random/300x200" alt="Food Image"/>
+      <img src={strMealThumb} alt="Food Image"/>
       <div className="info">
-        <h2>Delicious Burger</h2>
-        <div className="cuisine">American, Fast Food</div>
-        <div className="price">&#x20B9; 150 for one</div>
-        <div className="ratings">
+        <h2>{strMeal}</h2>
+        <div className="cuisine">Region: {strArea}</div>
+        <div className="price">#{strTags}</div>
+        {/* <div className="ratings">
           <span className="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
           <span className="count">(100)</span>
-        </div>
-        <button>Order Now</button>
+        </div> */}
+        <button>Full Recipe</button>
       </div>
     </div>
  

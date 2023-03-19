@@ -25,10 +25,10 @@ import cart from './grocery-store.png'
      
       <nav className="searchContainer">
           <ul>
-          <li><img src={offer}/>Offers</li>
-          <li><img src={help}/>Help</li>
-          <li><img src={login}/>Login</li>
-          <li><img src={cart}/>Cart</li>
+          <li>Home</li>
+          <li>Help</li>
+          <li>Our Story</li>
+          <li>Contact</li>
           </ul>
         {/* <input type="search" className='search' placeholder='Search bye name' value= {searchInput} onChange = {(e) =>{
           setSearchInput(e.target.value)
