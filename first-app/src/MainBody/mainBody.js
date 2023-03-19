@@ -5,9 +5,7 @@ export const Container1 = () => {
   const [pokemonName, setPokemonName] = useState([])
   const [pokemonImgURL, setPokemonImgURL] = useState([])
 
-  useEffect(() => {
-    getPokemonData()
-  }, [])
+  useEffect(() => { getPokemonData() }, [])
   useEffect(() => {
     getPokemonImages()
   }, [pokemonImgURL])
