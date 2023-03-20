@@ -4,6 +4,7 @@ import ChoiceCarousel from "./ChoiceCrsl";
 import CardsContainer from "./cardsContainer";
 
 
+
  const BodyContainer = () => {
   return(
      <>

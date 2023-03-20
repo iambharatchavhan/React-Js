@@ -1,0 +1,35 @@
+.barra {
+    width: 100%;
+    position: relative
+  }
+  .buscar {
+    float: left;
+    width: 100%;
+    border: 3px solid orange;
+    padding: 5px;
+    height: 20px;
+    border-radius: 25px;
+    outline: none;
+    color: #E03636;
+    padding: .4rem;
+    padding-left: .9rem;
+    margin-bottom:1rem;
+  }
+  
+  .search-img{
+    position: absolute;
+    top:4px;
+    right: 0px;
+    width:30px;
+    cursor: pointer;
+   
+  }
+  .wrap{
+    width: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
