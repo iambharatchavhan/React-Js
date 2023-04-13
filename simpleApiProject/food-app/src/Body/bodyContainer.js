@@ -8,11 +8,7 @@ import CardsContainer from "./cardsContainer";
  const BodyContainer = () => {
   return(
      <>
-     <ChoiceCarousel/>
      <CardsContainer/>
-   
-
-    
      </>
   )
 

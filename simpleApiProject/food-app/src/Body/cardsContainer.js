@@ -8,7 +8,7 @@ import search from "./search.png"
 // const foodUrl = 'www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata'
 // let dataNames= []
 
-const CardsContainer = () => {
+  const CardsContainer = () => {
   const  [meals, setMeals] = useState([])
   const [searchInput, setSearchInput] = useState("")
 
@@ -47,7 +47,7 @@ const CardsContainer = () => {
 </div>
    
        {meals.map((card)=>{
-        return <Card prop={card} key ={card.idMeal} />
+        return <Card prop={card} key = {card.idMeal} />
        })}
      
       

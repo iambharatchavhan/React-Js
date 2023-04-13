@@ -1,11 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './footer.css'
+import { useState } from 'react'
 
 const Footer = () => {
+//  const [varOF, setVarOf] = useState();
+  
+
   return (
     <>
       <footer className="footer">
+      {/* <input type="search" className='search' placeholder='Search bye name' value= {varOF} onChange = {(e)=>{
+        setVarOf (e.target.value);
+      }} */}
+     {/* ></input> */}
         <div className="footer__addr">
           <h1 className="footer__logo">Pokemon</h1>
 
