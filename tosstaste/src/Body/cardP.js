@@ -27,8 +27,9 @@ const CardParent = () => {
         </div>
       </div>
       <div className="containerOfCads">
-      <Card />
-      
+      {hardData.map((card)=>{
+        return <Card prop={card.data.data} key = {""} />
+       })}
     </div>
     </>
   )

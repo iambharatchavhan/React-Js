@@ -2,12 +2,7 @@ import React from "react";
 import { ReactDOM } from "react";
 
 const hardData = [
-    {
-        "cardType": "restaurant",
-        "layoutAlignmentType": "VERTICAL",
-        "data": {},
-        "parentWidget": false
-        },
+   
         {
         "cardType": "restaurant",
         "layoutAlignmentType": "VERTICAL",
