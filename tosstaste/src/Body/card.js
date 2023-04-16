@@ -6,8 +6,7 @@ const Card = ({prop}) => {
         // console.log(prop);
 	
 	
-	// const {cloudinaryImageId, } = prop;
-	// console.log(cloudinaryImageId,);
+	
 
     return(
         <div className="card">

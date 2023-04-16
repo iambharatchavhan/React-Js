@@ -12,6 +12,7 @@ import search from "./search.png"
   const  [meals, setMeals] = useState([])
   const [searchInput, setSearchInput] = useState("")
 
+    
    useEffect(()=>{foodData()},[])
     function foodData(){
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s')
@@ -28,11 +29,20 @@ import search from "./search.png"
     })
      
 }
+        
+  function filterMeals (searchInput){
+    const theFilteredData = meals.filter( (recipe) => {
+        // console.log(recipe.strMeal);
+        if(recipe.strMeal.toLowerCase().includes(searchInput.toLowerCase())){
+          return recipe;
+        }
+    });
+    return theFilteredData;
+  }
 
-
-  
  return !meals.length?(<Shimmer/>):(
-     
+        
+  
  
        <div id="mainContainer">
         <div className="wrap">
@@ -40,12 +50,18 @@ import search from "./search.png"
     <div className="barraContainer">
     <input type="text" className="buscar" placeholder="Search Recipes Here" value={searchInput} onChange ={(e)=> {
         setSearchInput(e.target.value)
+        if(e.target.value === ""){
+          foodData();
+          //  console.log(meals);
+        }
     }}  />
-    <img src={search} alt="search" className="search-img"/>
+    <img src={search} alt="search" className="search-img" onClick={()=>{
+       setMeals(filterMeals(searchInput));
+    }}/>
     </div>
   </div>
 </div>
-   
+      
        {meals.map((card)=>{
         return <Card prop={card} key = {card.idMeal} />
        })}

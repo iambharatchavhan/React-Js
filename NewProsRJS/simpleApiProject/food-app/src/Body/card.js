@@ -6,7 +6,7 @@ import "./card.css"
 
 
 const Card = ({prop}) => {
-     console.log(prop);
+    //  console.log(prop.strMeal);
      const {strMealThumb,strMeal,strArea,strTags} = prop
     //  console.log(strMealThumb,strMeal,strArea);
     return(
