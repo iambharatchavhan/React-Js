@@ -1,20 +1,33 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReactDOM } from 'react'
 import './cardP.css'
 import Card from './card'
 import hardData from "../HardData/hardData.js"
+import Shimmer from './Shimmer/shimmer'
 
 
 
 const CardParent = () => {
   const [inputValue, setInputValue] = useState()
-  const [data, setData] = useState(hardData);
+  const [data, setData] = useState([]);
   
+  useEffect(() =>{filteredData(); } ,[])
+
+
+ async function filteredData (){
+  const apiData = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&offset=47&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING')
+  const jsonData = await apiData.json();
+  // console.log(jsonData);
+
+  setData(jsonData.data.cards);
+ }
+
   
   function searchRestaurant (inputValue) {
 
     // restaurant.data.data.name === inputValue
      const filteredData = data.filter (restaurant => {
+      // console.log(restaurant.data.data.name); 
          if(restaurant.data.data.name.toLowerCase().includes(inputValue.toLowerCase())){
           return restaurant;
          }
@@ -26,7 +39,7 @@ const CardParent = () => {
 
   }
  
-  return (
+  return !data.length?<Shimmer/>: (
 
     <>
       <div className="wrap">
@@ -39,7 +52,7 @@ const CardParent = () => {
             onChange={(e) => {
               setInputValue(e.target.value)
               if(e.target.value === ""){
-                setData(hardData);
+                filteredData();
               }
             }}
           />
