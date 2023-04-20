@@ -20,8 +20,8 @@ const CardParent = () => {
   const jsonData = await apiData.json();
   // console.log(jsonData);
 
-  setData(jsonData.data.cards);
-  setAllData(jsonData.data.cards);
+  setData(jsonData?.data?.cards);
+  setAllData(jsonData?.data?.cards);
  }
 
   
@@ -30,7 +30,7 @@ const CardParent = () => {
     // restaurant.data.data.name === inputValue
      const filteredData = allData.filter (restaurant => {
       // console.log(restaurant.data.data.name); 
-         if(restaurant.data.data.name.toLowerCase().includes(inputValue.toLowerCase())){
+         if(restaurant?.data?.data?.name.toLowerCase().includes(inputValue.toLowerCase())){
           return restaurant;
          }
 
@@ -71,7 +71,7 @@ const CardParent = () => {
       <div className="containerOfCads">
       {allData.map((card)=>{
         // console.log(card.data.data);
-        return <Card prop={card.data.data} key = {card.data.data?.id} />
+        return <Card prop={card?.data?.data} key = {card?.data?.data?.id} />
        })}
     </div>
     </>
