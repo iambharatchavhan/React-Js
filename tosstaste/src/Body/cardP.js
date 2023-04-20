@@ -10,6 +10,7 @@ import Shimmer from './Shimmer/shimmer'
 const CardParent = () => {
   const [inputValue, setInputValue] = useState()
   const [data, setData] = useState([]);
+  const [allData,setAllData] = useState([]);
   
   useEffect(() =>{filteredData(); } ,[])
 
@@ -20,13 +21,14 @@ const CardParent = () => {
   // console.log(jsonData);
 
   setData(jsonData.data.cards);
+  setAllData(jsonData.data.cards);
  }
 
   
   function searchRestaurant (inputValue) {
 
     // restaurant.data.data.name === inputValue
-     const filteredData = data.filter (restaurant => {
+     const filteredData = allData.filter (restaurant => {
       // console.log(restaurant.data.data.name); 
          if(restaurant.data.data.name.toLowerCase().includes(inputValue.toLowerCase())){
           return restaurant;
@@ -60,14 +62,14 @@ const CardParent = () => {
             // console.log(inputValue);
             // searchRestaurant(inputValue);
             // setData(filteredData);
-            setData(searchRestaurant(inputValue))
+            setAllData(searchRestaurant(inputValue))
           }}>
             Search
           </button>
         </div>
       </div>
       <div className="containerOfCads">
-      {data.map((card)=>{
+      {allData.map((card)=>{
         // console.log(card.data.data);
         return <Card prop={card.data.data} key = {card.data.data?.id} />
        })}
