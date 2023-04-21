@@ -6,7 +6,8 @@ import About from "./Body/about";
 import Help from "./Body/help";
 import Contact from "./Body/contact";
 import Error from "./Body/error";
-import { Children } from "react";
+import RestaurantMenu from "./Body/restaurentMenu";
+
 
 
 
@@ -44,6 +45,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/contact",
         element: <Contact/>
+      },
+      {
+        path:"/restaurant/:id",
+        element:<RestaurantMenu/>
       }
     ] 
   },
