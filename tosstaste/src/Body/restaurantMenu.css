@@ -1,3 +1,148 @@
-.restaurantImg{
-    width: 200px;
+.resHead{
+    background-color: #f5f5f7;
+    display:  flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px dashed #bfbfbf;
+
 }
+.resHead p{
+    font-size: .9rem;
+    color: #808080;
+}
+.resHead p:hover{
+    color: #000;
+}
+
+.resImg img{
+    width: 300px;
+}
+.resInfo{
+    margin-left: -4rem;
+}
+
+.addressBar{
+    font-size: 0.3rem;
+    margin-left: -2rem;
+    /* border: 1px solid red; */
+}
+.restaurantName{
+     margin-top: 5rem;
+}
+.resRating{
+    border: 1px solid #bfbfbf;
+    border-radius: .2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 90px;
+    height: 80px;
+    font-size: .7rem;
+
+}
+.ratingStar{
+    color: green;
+  
+}
+.countDiv{
+    border-top:1px solid #bfbfbf;
+}
+.ratingCount{
+    font-size: .7rem;
+}
+.priseTime{
+    font-size: .6rem;
+    font-weight: 700;
+}
+.priseTime h1{
+    margin-left: 11rem;
+}
+.time{
+    font-size: 1.5rem;
+}
+.circleRupee{
+    border: 2px solid #4e4d4d;
+    background-color: #E6E6E6;
+    padding: .1rem .4rem;
+    border-radius: 50%;
+    margin: 0 .5rem;
+}
+.prise{
+    margin: 0 2rem;
+}
+
+.menuItem{
+    display: flex;
+    justify-content: space-around;
+    line-height: 1rem;
+    padding: 1rem;
+}
+.menuPrice{
+    font-weight: 700;
+}
+.serve{
+    font-size: .8rem;
+    color: #464646;
+}
+
+
+.menuImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.menuImg img{
+    width: 150px;
+    height: 110px;
+    border-radius: .3rem;
+}
+
+.menuImg .minus {
+    border: none;
+    background: none;
+    margin: 0 .5rem;
+    color: #008000;
+    font-size: 1.2rem;
+} 
+.btnMenu{
+    border: 1px solid rgb(169, 169, 169);
+    padding: 0.5rem .7rem;
+    color: #008000;
+     border-radius: .5rem;
+
+}
+.lineParent{
+    text-align: center;
+}
+.lineParent hr{
+    width: 70%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .resHead{
+       
+        display:  flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    
+    
+    }
+    
+    
+    .resInfo{
+        margin-left:0rem;
+    }
+    
+    .addressBar{
+     text-align: center;
+    
+    }
+   
+  }
