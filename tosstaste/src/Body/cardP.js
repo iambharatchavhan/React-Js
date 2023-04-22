@@ -4,6 +4,7 @@ import './cardP.css'
 import Card from './card'
 import hardData from "../HardData/hardData.js"
 import Shimmer from './Shimmer/shimmer'
+import { Link } from 'react-router-dom'
 
 
 
@@ -71,7 +72,12 @@ const CardParent = () => {
       <div className="containerOfCads">
       {allData.map((card)=>{
         // console.log(card.data.data);
-        return <Card prop={card?.data?.data} key = {card?.data?.data?.id} />
+        return ( <Link to={"/restaurant/" + card?.data?.data?.id} key = {card?.data?.data?.id}>
+          <Card prop={card?.data?.data}  />
+        </Link>
+          
+        )
+         
        })}
     </div>
     </>

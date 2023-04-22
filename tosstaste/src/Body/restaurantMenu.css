@@ -73,12 +73,26 @@
 .prise{
     margin: 0 2rem;
 }
+.myRestaurantMenuTitle{
+    text-align: center;
+    color: #000;
+}
+#parentMenuDiv{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+}
+
+
 
 .menuItem{
+    width: 60vw;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-between;
     line-height: 1rem;
     padding: 1rem;
+    border-bottom: 1px dashed green;
 }
 .menuPrice{
     font-weight: 700;
@@ -96,10 +110,15 @@
     align-items: center;
 
 }
-.menuImg img{
+.menuImg{
     width: 150px;
-    height: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: .3rem;
+}
+.menuImg img {
+   width: 100%; 
 }
 
 .menuImg .minus {
@@ -110,18 +129,15 @@
     font-size: 1.2rem;
 } 
 .btnMenu{
+    margin-top: -1.5rem;
     border: 1px solid rgb(169, 169, 169);
+    background-color: #f1f1f1;
     padding: 0.5rem .7rem;
     color: #008000;
-     border-radius: .5rem;
+    border-radius: .5rem;
 
 }
-.lineParent{
-    text-align: center;
-}
-.lineParent hr{
-    width: 70%;
-}
+
 
 
 @media only screen and (max-width: 600px) {
@@ -146,3 +162,4 @@
     }
    
   }
+
