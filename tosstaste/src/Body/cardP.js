@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { ReactDOM } from "react";
 import "./cardP.css";
 import Card from "./card";
 import Shimmer from "./Shimmer/shimmer";
@@ -32,7 +31,7 @@ const CardParent = () => {
       if (
         restaurant?.data?.data?.name
           .toLowerCase()
-          .includes(inputValue.toLowerCase())
+          .includes(inputValue?.toLowerCase())
       ) {
         return restaurant;
       }
@@ -45,8 +44,11 @@ const CardParent = () => {
 
 
   return !data.length ? (
+    
     <Shimmer />
-  ) : (
+
+  ) : ( 
+   
 
     <>
       <div className="wrap">
@@ -76,8 +78,7 @@ const CardParent = () => {
         </div>
       </div>
       <div className="containerOfCads">
-  
-        {allData.map((card) => {
+           {!allData.length ? <h1>Oops.... not found,make Nice Animation</h1> : (allData.map((card) => {
           // console.log(card.data.data);
            return (
             <Link
@@ -87,7 +88,8 @@ const CardParent = () => {
               <Card prop={card?.data?.data} />
             </Link>
           );
-        })}
+        }))}
+       
       </div>
     </>
   );
