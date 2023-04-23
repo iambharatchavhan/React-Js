@@ -76,9 +76,10 @@ const CardParent = () => {
         </div>
       </div>
       <div className="containerOfCads">
+  
         {allData.map((card) => {
           // console.log(card.data.data);
-          return (
+           return (
             <Link
               to={"/restaurant/" + card?.data?.data?.id}
               key={card?.data?.data?.id}
