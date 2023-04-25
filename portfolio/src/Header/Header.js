@@ -5,10 +5,11 @@ const Header = () => {
     return(
         <header className="site-header">
         <div className="site-identity">
-          <h1><a href="#">Bharat Chavhan <span id="role">(Developer)</span></a></h1>
+          <h1><Link to="/">Bharat Chavhan <span id="role">(Developer)</span></Link></h1>
         </div>  
         <nav className="site-navigation">
           <ul className="nav">
+          <li><Link to="/">Home</Link></li> 
             <li><Link to="projects">Projects</Link></li> 
             <li><Link to="resume">Resume</Link></li> 
             <li><Link to="contact">Contact</Link></li> 
