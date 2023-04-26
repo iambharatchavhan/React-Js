@@ -23,6 +23,10 @@ const appRouter = createBrowserRouter([
     element: <App />,
     children: [
       {
+        path: "/",
+        element: <Body/>,
+      },
+      {
         path: "/projects",
         element: <Project />,
       },
