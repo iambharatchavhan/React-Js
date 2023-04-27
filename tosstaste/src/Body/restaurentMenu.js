@@ -1,19 +1,21 @@
 import { json, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./restaurantMenu.css";
+import { Cloud_Img } from "../utils/glob";
+import { Sw_API_id } from "../utils/glob";
+import MenuShimmer from "./MenuShimmer/MenusShimmer";
 
 const RestaurantMenu = () => {
   const { id } = useParams();
   const [restaurant, setRestaurant] = useState({});
   const [restaurantMenus, setMenusRestaurant] = useState(null);
+
   useEffect(() => {
     theRestaurant();
   }, []);
 
   async function theRestaurant() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId=" + id
-    );
+    const data = await fetch(Sw_API_id + id);
 
     const json = await data.json();
     // console.log(json?.data?.?.groupedCard?.cardGroupMap?.REGULAR?.cards);
@@ -24,7 +26,6 @@ const RestaurantMenu = () => {
     const cardsData = dataArrayCardsMenus.filter(
       (card) => card.card.card.itemCards
     );
-   
 
     setRestaurant(dataArrayCards);
     setMenusRestaurant(cardsData);
@@ -34,7 +35,7 @@ const RestaurantMenu = () => {
   //  console.log(restaurantMenus.map(e=> console.log(e)));
 
   if (!restaurantMenus) {
-    return <h1>Loading--</h1>;
+    return <MenuShimmer />;
   }
 
   return (
@@ -43,10 +44,7 @@ const RestaurantMenu = () => {
         <div className="resHead">
           <div className="resImg">
             <img
-              src={
-                `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/` +
-                restaurant.cloudinaryImageId
-              }
+              src={Cloud_Img + restaurant.cloudinaryImageId}
               className="restaurantImg"
               alt="foodImeg"
             />
@@ -76,11 +74,9 @@ const RestaurantMenu = () => {
         </div>
         <div className="priseTime">
           <h1>
-            {" "}
             <span className="time">&#128337;</span>
             {restaurant?.sla?.slaString}
             <span className="prise">
-              {" "}
               <span className="circleRupee">&#x20B9;</span>{" "}
               {restaurant.costForTwoMessage}
             </span>
@@ -104,10 +100,7 @@ const RestaurantMenu = () => {
                     </div>
                     <div className="menuImg">
                       <img
-                        src={
-                          `https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/` +
-                          card.card.info.imageId
-                        }
+                        src={Cloud_Img + card.card.info.imageId}
                         className="restaurantImg"
                         alt="foodImeg"
                       />
@@ -117,9 +110,6 @@ const RestaurantMenu = () => {
                       </h3>
                     </div>
                   </div>
-                  {/* <div className="lineParent">
-                    <hr/>
-                  </div> */}
                 </div>
               );
             })}

@@ -1,6 +1,8 @@
 import React from "react";
 // import { ReactDOM } from "react";
 import "./card.css"
+import { Cloud_Img } from "../utils/glob";
+
 
 const Card = ({prop}) => {
         // console.log(prop);
@@ -12,7 +14,7 @@ const Card = ({prop}) => {
         <div className="card">
 		<div className="header">
 			<div className="image">
-				<img src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/` + prop.cloudinaryImageId} className="theImg" alt="foodImeg"/>
+				<img src={Cloud_Img + prop.cloudinaryImageId} className="theImg" alt="foodImeg"/>
 			</div>
 			<div className="date">
 				<span>{prop.slaString} Away</span>
