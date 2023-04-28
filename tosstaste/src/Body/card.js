@@ -18,8 +18,8 @@ const Card = ({prop}) => {
 			</div>
 			<div className="date">
 				<span>{prop.slaString} Away</span>
-				<span id="rate">{prop?.avgRating
-} &#9733;</span></div>
+				<span id="rate">&#9733;{prop?.avgRating
+} </span></div>
 		</div>
 		<div className="info">
 			<h3>{prop.name}</h3>

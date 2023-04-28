@@ -65,6 +65,18 @@
 
 }
 
+@media only screen and (max-width: 768px) {
+
+ 
+.portfolioHero{
+  flex-wrap: wrap;
+}
+.portfolioHero img {
+  width: 400px;
+  margin: 0;
+}
+  
+}
 
 @media only screen and (max-width: 600px) {
     #centerHero{
@@ -73,6 +85,7 @@
       }
       .portfolioHero img {
         width: 290px;
+        margin: 0;
       }
 
      .heroInfo{
@@ -94,8 +107,7 @@
     align-items: center;
     gap: 0 .5rem;
 }
-  
-    
  
-   
-  }
+}   
+ 
+
