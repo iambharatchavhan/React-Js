@@ -1,38 +1,13 @@
-import { json, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
 import "./restaurantMenu.css";
 import { Cloud_Img } from "../utils/glob";
-import { Sw_API_id } from "../utils/glob";
 import MenuShimmer from "./MenuShimmer/MenusShimmer";
+import useRestaurant from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const { id } = useParams();
-  const [restaurant, setRestaurant] = useState({});
-  const [restaurantMenus, setMenusRestaurant] = useState(null);
+  // const { id } = useParams();
 
-  useEffect(() => {
-    theRestaurant();
-  }, []);
-
-  async function theRestaurant() {
-    const data = await fetch(Sw_API_id + id);
-
-    const json = await data.json();
-    // console.log(json?.data?.?.groupedCard?.cardGroupMap?.REGULAR?.cards);
-    const dataArrayCards = json?.data?.cards[0]?.card?.card?.info;
-    const dataArrayCardsMenus =
-      json?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
-
-    const cardsData = dataArrayCardsMenus.filter(
-      (card) => card.card.card.itemCards
-    );
-
-    setRestaurant(dataArrayCards);
-    setMenusRestaurant(cardsData);
-  }
-
-  // console.log(restaurantMenus);
-  //  console.log(restaurantMenus.map(e=> console.log(e)));
+  const [restaurant, setRestaurant] = useRestaurant({});
+  const [, , restaurantMenus, setMenusRestaurant] = useRestaurant(null);
 
   if (!restaurantMenus) {
     return <MenuShimmer />;

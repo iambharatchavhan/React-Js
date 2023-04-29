@@ -4,32 +4,15 @@ import Card from "./card";
 import Shimmer from "./Shimmer/shimmer";
 import { Link } from "react-router-dom";
 import useAPIData from "../utils/useOwnRestaurantHook";
-
+// import { SearchRestaurant } from "../utils/glob";
 
 const CardParent = () => {
   const [inputValue, setInputValue] = useState();
   const [data, setData] = useAPIData();
-  const [,,allData,setAllData] = useAPIData();
-  // const [data, setData] = useState([]);
-  // const [allData, setAllData] = useState([]);
-
-  // useEffect(() => {
-  //   filteredData();
-  // }, []);
-
-  // async function filteredData() {
-  //   const apiData = await fetch(Sw_API_Call);
-  //   const jsonData = await apiData.json();
-  //   // console.log(jsonData);
-
-  //   setData(jsonData?.data?.cards);
-  //   setAllData(jsonData?.data?.cards);
-  // }
+  const [, , allData, setAllData] = useAPIData();
 
   function searchRestaurant(inputValue) {
-    // restaurant.data.data.name === inputValue
     let filteredData = allData.filter((restaurant) => {
-      // console.log(restaurant.data.data.name);
       if (
         restaurant?.data?.data?.name
           .toLowerCase()
@@ -38,15 +21,17 @@ const CardParent = () => {
         return restaurant;
       }
     });
-    if(!filteredData.length){
+    if (!filteredData.length) {
       filteredData = null;
     }
     return filteredData;
   }
 
   return !data.length ? (
-    <><Shimmer />
-    <Shimmer /></>
+    <>
+      <Shimmer />
+      <Shimmer />
+    </>
   ) : (
     <>
       <div className="wrap">

@@ -24,4 +24,7 @@ const useAPIData = () =>{
 
 }
 
+// console.log([allData]);
+
+
 export default useAPIData;
