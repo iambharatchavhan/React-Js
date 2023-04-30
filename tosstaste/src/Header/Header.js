@@ -1,6 +1,7 @@
 import React from 'react'
 import { ReactDOM } from 'react'
 import { Link } from 'react-router-dom'
+import {BiHomeAlt2} from "react-icons/bi"
 import "./header.css"
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
         <nav className="site-navigation">
           <ul className="nav">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/"><BiHomeAlt2/> Home</Link>
             </li>
             <li>
               <Link to="/about">About</Link>
