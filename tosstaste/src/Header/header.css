@@ -45,6 +45,7 @@ a {
     border-radius: 44% 56% 22% 78% / 44% 87% 13% 56% ;
     padding:1px;
   }
+ 
   @media only screen and (max-width: 768px) {
 
     .site-header { 
@@ -75,9 +76,10 @@ a {
    
    }
    .site-navigation li {
-    margin: 0 10px;
+    margin: 0 8px;
    
   }
 
 
   }
+

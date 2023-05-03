@@ -2,6 +2,9 @@ import "./restaurantMenu.css";
 import { Cloud_Img } from "../utils/glob";
 import MenuShimmer from "./MenuShimmer/MenusShimmer";
 import useRestaurant from "../utils/useRestaurantMenu";
+import { addItems } from "../utils/CartSlices";
+import { useDispatch } from "react-redux";
+
 
 const RestaurantMenu = () => {
   // const { id } = useParams();
@@ -9,10 +12,22 @@ const RestaurantMenu = () => {
   const [restaurant, setRestaurant] = useRestaurant({});
   const [, , restaurantMenus, setMenusRestaurant] = useRestaurant(null);
 
+
+  let dispatch = useDispatch();
+
+  //  const handleAddItems = (items)=>{
+  //     dispatch(addItems(items))
+      
+  //  }
+  const addFoodItem = (items)=>{
+    dispatch(addItems(items))
+  }
+ 
+
+
   if (!restaurantMenus) {
     return <MenuShimmer />;
   }
-
   return (
     <div>
       <section>
@@ -80,8 +95,13 @@ const RestaurantMenu = () => {
                         alt="foodImeg"
                       />
                       <h3 className="btnMenu">
-                        <button className="minus">-</button>0
-                        <button className="minus">+</button>
+                        <button  className="minus">-</button>0
+                        <button
+                         onClick={()=>{
+                          addFoodItem(card?.card?.info);
+                          //! card items added with the info
+                        }} 
+                        className="minus">+</button>
                       </h3>
                     </div>
                   </div>

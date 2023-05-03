@@ -2,9 +2,18 @@ import React from 'react'
 import { ReactDOM } from 'react'
 import { Link } from 'react-router-dom'
 import {FcDebian} from 'react-icons/fc'
+import {CiShoppingBasket} from 'react-icons/ci'
 import "./header.css"
+import { useSelector } from 'react-redux'
+
+
+
 
 const Header = () => {
+
+  const cartItems = useSelector((store) => store.cart.items)
+  console.log(cartItems);
+
   return (
     <>
       <header className="site-header">
@@ -27,8 +36,8 @@ const Header = () => {
             <li>
               <Link to="/contact">Contact</Link>
             </li>
-            <li>
-              <Link to="/cart">Cart</Link>
+            <li className='lastCart'>
+              <Link to="/cart"><CiShoppingBasket/>{cartItems.length}</Link>
             </li>
           </ul>
         </nav>
