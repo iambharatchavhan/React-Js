@@ -28,7 +28,7 @@ const Header = () => {
               <Link to="/contact">Contact</Link>
             </li>
             <li>
-              <Link to="#">Cart</Link>
+              <Link to="/cart">Cart</Link>
             </li>
           </ul>
         </nav>

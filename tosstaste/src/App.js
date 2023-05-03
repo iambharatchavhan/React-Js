@@ -7,6 +7,9 @@ import Help from "./Body/help";
 import Contact from "./Body/contact";
 import Error from "./Body/error";
 import RestaurantMenu from "./Body/restaurentMenu";
+import { Provider } from "react-redux";
+import Cart from "./Body/AddToCart";
+import store from "./utils/store";
 
 
 
@@ -14,11 +17,11 @@ import RestaurantMenu from "./Body/restaurentMenu";
 
 function App() {
   return (
-    <>
+    <Provider store= {store} >
      <Header/>
      <Outlet/>
      <Footer/>
-   </>
+   </Provider>
   
   );
 }
@@ -49,6 +52,10 @@ const appRouter = createBrowserRouter([
       {
         path:"/restaurant/:id",
         element:<RestaurantMenu/>
+      },
+      {
+        path:"/cart",
+        element:<Cart/>
       }
     ] 
   },

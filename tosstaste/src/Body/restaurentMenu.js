@@ -81,7 +81,7 @@ const RestaurantMenu = () => {
                       />
                       <h3 className="btnMenu">
                         <button className="minus">-</button>0
-                        <button className="minus">+</button>{" "}
+                        <button className="minus">+</button>
                       </h3>
                     </div>
                   </div>
