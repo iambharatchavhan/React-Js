@@ -1,5 +1,4 @@
 import React from 'react'
-import { ReactDOM } from 'react'
 import { Link } from 'react-router-dom'
 import {FcDebian} from 'react-icons/fc'
 import {CiShoppingBasket} from 'react-icons/ci'

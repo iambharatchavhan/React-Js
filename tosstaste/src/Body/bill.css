@@ -55,11 +55,15 @@ button{
 
 }
 .checkout{
-    min-width: 720px;
+    min-width: 230px;
     font-size: 1.8rem;
     border: none;
     background-color: green;
     border-radius: .3rem;
     color: #fdfdfd;
     padding: 0.5rem;
+    margin: .5rem;
+}
+.clear-cart{
+    background-color: red;
 }
