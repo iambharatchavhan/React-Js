@@ -5,7 +5,15 @@ import { clearCart } from "../utils/CartSlices";
 
 
 const Cart = () => {
-  const cartItems = useSelector((store) => store.cart.items);
+  const cartItems = useSelector((store) => store.cart.items.menu);
+  const totalPriceArr = useSelector((store) => store.cart.items.price);
+
+  const totalPrice = totalPriceArr.reduce((acc,cum)=>{
+      acc = acc + cum;
+      return acc
+  },0)
+
+  console.log(totalPrice,totalPriceArr);
   
   const dispatch = useDispatch();
 
@@ -21,7 +29,7 @@ const Cart = () => {
 
       <div className="billPriceTotal">
         <h1>Total Items :{cartItems.length}</h1>
-        <h1>Total price :&#x20B9;</h1>
+        <h1>Total price :&#x20B9;{totalPrice/100}</h1>
       </div>
       <div className="btn-of-clear-cart-checkout">
         <button className="checkout clear-cart"  onClick={()=> handleClearCart()}>Clear Cart</button>

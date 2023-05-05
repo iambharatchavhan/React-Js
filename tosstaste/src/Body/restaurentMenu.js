@@ -2,8 +2,9 @@ import "./restaurantMenu.css";
 import { Cloud_Img } from "../utils/glob";
 import MenuShimmer from "./MenuShimmer/MenusShimmer";
 import useRestaurant from "../utils/useRestaurantMenu";
-import { addItems } from "../utils/CartSlices";
+import { addItems, removeItems } from "../utils/CartSlices";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const RestaurantMenu = () => {
   // const { id } = useParams();
@@ -11,13 +12,27 @@ const RestaurantMenu = () => {
   const [restaurant, setRestaurant] = useRestaurant({});
   const [, , restaurantMenus, setMenusRestaurant] = useRestaurant(null);
 
+
+
+  //! ------------------adding count--------------------------
+const menuItems = useSelector((store)=>store.cart.items.menu)
+
+
+//!--------------------------------------------- 
   //*-------------------------------------------
+ 
+
   let dispatch = useDispatch();
   const addFoodItem = (items) => {
     dispatch(addItems(items));
   };
 
+  const removeFoodItem = (id) =>{
+    dispatch(removeItems(id))
+  }
   //*-------------------------------------------
+
+
 
   if (!restaurantMenus) {
     return <MenuShimmer />;
@@ -68,10 +83,16 @@ const RestaurantMenu = () => {
         </div>
       </section>
       {restaurantMenus?.map((items, index) => {
+          
+
+
         return (
           <div key={index}>
             <h1 className="myRestaurantMenuTitle"> {items.card.card.title}</h1>
             {items?.card?.card?.itemCards?.map((card) => {
+                
+               const count = menuItems.filter((item)=> item.id === card?.card?.info?.id)
+              //  console.log(count);
               return (
                 <div key={card?.card?.info?.id} id="parentMenuDiv">
                   <div className="menuItem">
@@ -89,7 +110,9 @@ const RestaurantMenu = () => {
                         alt="foodImeg"
                       />
                       <h3 className="btnMenu">
-                        <button className="minus">-</button>0
+                        <button className="minus" onClick={()=>{
+                          removeFoodItem(card?.card?.info?.id)
+                        }}>-</button>{count.length}
                         <button
                           onClick={() => {
                             addFoodItem(card?.card?.info);
