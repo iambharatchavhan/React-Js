@@ -129,6 +129,32 @@
   color: #008000;
   border-radius: 0.5rem;
 }
+
+.floatingGoToCart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: #4a9b4a;
+  border-radius: 1rem;
+  gap: 50%;
+  position: sticky !important;
+  left: 25%;
+  bottom: 10%;
+}
+.floatingGoToCart p{
+  font-size: 1.3em;
+  font-weight: 600;
+  color: #f3f3f3;
+}
+.basketCount{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: orange;
+}
+
+
 @media only screen and (max-width: 768px) {
   .menuItem {
     width: 95vw;
