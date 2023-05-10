@@ -1,10 +1,10 @@
 import React from "react";
-import Hero from "./Hero/Hero"
+import Help from "./help"
+
 
 const Contact = () => {
     return(
-   <h1>hello world this is contact page</h1>
-       
+   <Help/>  
     )
 }
 
