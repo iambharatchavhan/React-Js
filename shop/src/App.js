@@ -4,6 +4,7 @@ import Footer from "./Components/Footer";
 import Cart from "./Components/Cart";
 import Shop from "./Components/Shop";
 import Error from "./utils/error";
+import Product from "./Components/Product";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 
 const App = () => {
@@ -33,6 +34,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path:"/shop/:id",
+        element:<Product/>
       },
     ],
   },

@@ -1,6 +1,10 @@
+
+import ShopCardsHolder from "./ShopCardsHolder";
+
+
 const Shop=()=>{
     return(
-        <h1>Shop</h1>
+      <ShopCardsHolder/>
     )
 }
 export default Shop;

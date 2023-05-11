@@ -19,7 +19,7 @@ const ShopCard =({prop})=>{
                
               
             </div>
-            <button className="bg-[#377B52] px-5 py-1 rounded-xl text-yellow-50 m-4">Add To Cart</button>
+            <button className="bg-[#E1A952] px-5 py-1 rounded-xl text-yellow-50 m-4">Add To Cart</button>
             </div>
          
        </div>

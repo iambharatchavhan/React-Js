@@ -1,5 +1,6 @@
 import ShopCard from "./ShopCard";
 import { useEffect ,useState } from "react";
+import { Link } from "react-router-dom";
 
 const ShopCardsHolder = () =>{
  const [productData ,setProduct] = useState([])
@@ -21,8 +22,13 @@ const ShopCardsHolder = () =>{
 //  console.log(productData);
     return (
      <div className="flex flex-row flex-wrap justify-around gap-5 items-center w-full  my-5 p-5">
-    {productData.map((product)=>(
-       <ShopCard key={product.id} prop={product}/>
+
+
+     {productData.map((product)=>(
+            <Link to={"/shop/" + product.id} key={product.id}>
+               <ShopCard  prop={product}/>
+            </Link>
+       
     ))}
    
     </div>
