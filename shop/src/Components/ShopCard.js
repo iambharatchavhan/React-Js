@@ -1,9 +1,19 @@
-
+        import React from "react";
+        // import { useDispatch } from "react-redux";
+        // import { addItems } from "../utils/productSlice";
 
 const ShopCard =({prop})=>{
     // console.log(prop);
     const {id,category,title,price,description,image,rating} = prop;
     console.log(id,category,title,price,description,image,rating);
+       
+    //--------------------------------------------
+    // const dispatch = useDispatch();
+    // const handleAddItem =(item)=>{
+    //      dispatch(addItems(item))
+    // }
+    //--------------------------------------------
+
     return(
         <div className="flex flex-col w-[290px] h-[320px] justify-center items-center bg-slate-50 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] overflow-hidden">
             <div className=" w-[300px] h-[300px] overflow-hidden">
@@ -19,7 +29,8 @@ const ShopCard =({prop})=>{
                
               
             </div>
-            <button className="bg-[#E1A952] px-5 py-1 rounded-xl text-yellow-50 m-4">View Product</button>
+            <button  className="bg-[#E1A952] px-5 py-1 rounded-xl text-yellow-50 m-4">View Product</button>
+            {/* onClick={()=>handleAddItem(prop)} */}
             </div>
          
        </div>

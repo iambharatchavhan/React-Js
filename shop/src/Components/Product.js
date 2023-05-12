@@ -2,6 +2,9 @@ import { Link ,useParams} from "react-router-dom";
 import { useState,useEffect } from "react"; 
 import {CgShoppingCart} from "react-icons/cg"
 import { IconContext } from "react-icons/lib";
+import { useDispatch } from "react-redux";
+import { addItems } from "../utils/productSlice";
+
 
 const Product = () =>{
     const {id} = useParams();
@@ -9,7 +12,7 @@ const Product = () =>{
    
     useEffect(()=>{
       singleProduct();
-    },[])
+    })
    
    
     const singleProduct = async()=>{
@@ -19,13 +22,23 @@ const Product = () =>{
        const json = await response.json();
    
        setProductInfo(json)
-       console.log(json);
+      //  console.log(json);
    
     }
    
-   console.log(prodcutInfo?.rating?.count);
+  //  console.log(prodcutInfo?.rating?.count);
+//^---------------------------------------------------------------------------------
+const dispatch = useDispatch();
+
+const handleAddItems = (item)=>{
+  dispatch(addItems(item))
+}
+   
+//^---------------------------------------------------------------------------------
 
    return(
+
+
     <div style={{ backgroundColor: "rgba(0, 0, 0, 0)" }}>
   <div className="container px-5 py-24 mx-auto" style={{ cursor: "auto" }}>
     <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -149,14 +162,16 @@ const Product = () =>{
             </div>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex gap-[20%] ">
           <span className="title-font font-medium text-2xl text-gray-900">
             $45.99
           </span>
-          <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+         <Link to="/cart">
+         <button  onClick={()=>handleAddItems(prodcutInfo)}   className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
             Buy Now
           </button>
-          <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
+          </Link> 
+          <button onClick={()=>handleAddItems(prodcutInfo)} className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
           <IconContext.Provider value={{color:"green" ,size:"26"}}>
           <CgShoppingCart/>
           </IconContext.Provider>

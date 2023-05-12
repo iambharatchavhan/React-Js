@@ -6,14 +6,16 @@ import Shop from "./Components/Shop";
 import Error from "./utils/error";
 import Product from "./Components/Product";
 import { createBrowserRouter, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
