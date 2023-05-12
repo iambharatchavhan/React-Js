@@ -1,6 +1,8 @@
 import ShopCard from "./ShopCard";
 import { useEffect ,useState } from "react";
 import { Link } from "react-router-dom";
+import Shimmer from "./Shimmer";
+
 
 const ShopCardsHolder = () =>{
  const [productData ,setProduct] = useState([])
@@ -23,13 +25,13 @@ const ShopCardsHolder = () =>{
     return (
      <div className="flex flex-row flex-wrap justify-around gap-5 items-center w-full  my-5 p-5">
 
-
-     {productData.map((product)=>(
+     { productData.length === 0 ? <Shimmer/> :  ( productData.map((product)=>(
             <Link to={"/shop/" + product.id} key={product.id}>
                <ShopCard  prop={product}/>
             </Link>
        
-    ))}
+    ))) }
+  
    
     </div>
     );

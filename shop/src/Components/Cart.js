@@ -4,29 +4,6 @@ import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom"; 
 
 const Cart = () => {
- const {id} = useParams();
- const [prodcutInfo, setProductInfo] = useState();
-
- useEffect(()=>{
-   singleProduct();
- },[])
-
-
- const singleProduct = async()=>{
-
-    const response = await fetch('https://fakestoreapi.com/products/' + 1)
-
-    const json = await response.json();
-
-    console.log(json);
-
- }
-
-
-
-
-
-
     return(
        <section>
         <div className="container mx-auto mt-10">
