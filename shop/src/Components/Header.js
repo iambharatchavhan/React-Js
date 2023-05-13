@@ -1,9 +1,8 @@
-import React from "react";
+import React, {useState}from "react";
 import { Link } from "react-router-dom";
 import {FaStudiovinari} from "react-icons/fa"
 import { IconContext } from "react-icons/lib";
 import { useSelector} from "react-redux";
-import {CgShoppingCart} from "react-icons/cg"
 
 
 
@@ -12,44 +11,56 @@ const Header = () => {
   const cartItems= useSelector(store=> store.shopCart.items)
  console.log(cartItems);
 
+ const [toggleMenu, setToggleMenu] = useState(false);
+
+ const handleToggle = () =>{
+   setToggleMenu(!toggleMenu)
+ }
 
   return (
-    <div className="flex justify-between p-4 items-center bg-stone-700 sticky top-0 sm:flex sm:flex-wrap">
-      <div className="logo ml-8">
-        <h1 className="text-2xl flex font-bold text-white pr-2 pl-2 hover hover:text-orange-300 transition-all duration-50 ease-in-out cursor-pointer">
-        <IconContext.Provider value={{color:"orange"}}>
-        <FaStudiovinari/>
+    <header className="sticky top-0">
+      <div className="px-4 py-2 text-white flex  justify-between bg-blue-500 md:p-4">
+        <IconContext.Provider value={{size:"20px"}}>
+      
+          <h1 className="md:font-bold md:text-2xl flex"><FaStudiovinari/> BeQuick</h1>
         </IconContext.Provider>
-       BeQuick
-        </h1>
+      
+        <div className={toggleMenu ? "md:flex  md:pt-0 pt-10 w-full md:w-auto" : "hidden md:flex"} id="menu">
+        <ul>
+           <Link to="/"> 
+          <li className="md:inline-block cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3">Home</li>
+            
+           
+            </Link>
+           <Link to="/shop">
+           <li className="dropdown md:inline-block cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3 relative">Shop</li> 
+
+
+           </Link>
+           <Link to="/help">
+
+           <li className="md:inline-block cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3">Help</li>
+
+           </Link>
+           <Link to="/cart">
+           <li className="md:inline-block flex flex-row cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3"><p> cart {cartItems.length}</p> </li>
+
+
+           </Link>
+       
+
+
+
+        </ul>
+        </div>
+        <div className= "cursor-pointer md:hidden">
+          <input class="menu-btn hidden" type="checkbox" id="menu-btn"/>
+          <label class="menu-icon block cursor-pointer md:hidden px-2 py-4 relative select-none" for="menu-btn">
+            <span onClick={handleToggle} class="navicon bg-white-darkest flex items-center relative"></span>
+          </label>
       </div>
-      <div className="flex mr-8 gap-6 ">
-       <Link to="/"  className="text-xl text-white pr-2 pl-2 hover hover:text-orange-300 transition-all duration-50 ease-in-out  cursor-pointer">
-        <p >
-          Home
-        </p>
-        </Link> 
-        <Link to="/shop"  className="text-xl text-white pr-2 pl-2 hover hover:text-orange-300 transition-all duration-50 ease-in-out  cursor-pointer">
-        <p >
-          Shop
-        </p>
-        </Link> 
-        <Link to="/cart"  className="text-xl text-white pr-2 pl-2 hover hover:text-orange-300 transition-all duration-50 ease-in-out  cursor-pointer">
-        <p >
-        <button className="inline-flex gap-1 items-center justify-center text-yellow-100 mt-1">
-          <IconContext.Provider value={{color:"White" ,size:"23"}}>
-          <CgShoppingCart/>
-          </IconContext.Provider>
-          
-          {cartItems.length}
-          </button>
-        </p>
-        </Link> 
-        
-        
-        
       </div>
-    </div>
+    </header>
   );
 };
 
