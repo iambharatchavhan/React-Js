@@ -5,7 +5,7 @@
 const ShopCard =({prop})=>{
     // console.log(prop);
     const {id,category,title,price,description,image,rating} = prop;
-    console.log(id,category,title,price,description,image,rating);
+    // console.log(id,category,title,price,description,image,rating);
        
     //--------------------------------------------
     // const dispatch = useDispatch();

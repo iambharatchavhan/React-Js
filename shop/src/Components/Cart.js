@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 import { useSelector } from "react-redux";
+import EmptyCart from "./EmptyCart";
 
 
 const Cart = () => {
@@ -9,9 +10,9 @@ const Cart = () => {
   const cartItems = useSelector(store=>store.shopCart.items)
 
     return(
-       <section className="min-h-screen">
+       <section className="">
         <div className="container mx-auto mt-10">
-  <div className="flex shadow-md my-10">
+  <div className="flex  my-10">
     <div className="w-3/4 bg-white px-10 py-10">
       <div className="flex bg-[#6f68eb] text-yellow-50 justify-between border-b p-5 mt-[-4rem] sticky top-[4rem]">
         <h1 className="font-semibold text-2xl">Shopping Cart</h1>
@@ -21,7 +22,11 @@ const Cart = () => {
       
      
        {/*+++++++++++++++++++++++++++++++++++++++++++++++++ */}
-        {cartItems.map((item)=> <CartItem key={item.id} {...item}/> )}
+         {cartItems.length ===0 ? <EmptyCart/> : cartItems.map((item)=>(
+           
+           <CartItem key={item.id} {...item} prop={item}/>
+           ) )}
+        {}
        
 
        {/*+++++++++++++++++++++++++++++++++++++++++++++++++ */}
