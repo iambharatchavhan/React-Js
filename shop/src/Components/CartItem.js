@@ -17,20 +17,8 @@ const CartItem =({prop,id,title,price,image,category}) =>{
     const handleAddItem =(item)=>{
       dispatch(addItems(item))
   }
-
-  // items?.card?.card?.itemCards?.map((card) => {
-  //   const count = menuItems.filter(
-  //     (item) => item.id === card?.card?.info?.id
-  //   ))};
-  //  let count;
-  //  const prod = cartItems.map((product)=>(
-  //      count = cartItems.filter((item)=>(
-  //       item.id === product.id
-  //     )
-     
-  //     )
-  //   ))
-  //   console.log(prod.length);
+             
+  
 
  
 

@@ -27,21 +27,21 @@ const Header = () => {
       
         <div className={toggleMenu ? "md:flex  md:pt-0 pt-10 w-full md:w-auto" : "hidden md:flex"} id="menu">
         <ul>
-           <Link to="/"> 
+           {/* <Link to="/"> 
           <li className="md:inline-block cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3">Home</li>
             
            
-            </Link>
-           <Link to="/shop">
+            </Link> */}
+           <Link to="/">
            <li className="dropdown md:inline-block cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3 relative">Shop</li> 
 
 
            </Link>
-           <Link to="/help">
+           {/* <Link to="/help">
 
            <li className="md:inline-block cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3">Help</li>
 
-           </Link>
+           </Link> */}
            <Link to="/cart">
            <li className="md:inline-block flex flex-row cursor-pointer hover:text-gray-500 border-b md:border-none py-2 px-3"><p> cart {cartItems.length}</p> </li>
 

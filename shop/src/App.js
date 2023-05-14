@@ -1,6 +1,5 @@
-import Header from "./Components/Header";
-import Home from "./Components/Home";
-import Footer from "./Components/Footer";
+import Header from "./Components/HeaderFooter/Header";
+import Footer from "./Components/HeaderFooter/Footer";
 import Cart from "./Components/Cart";
 import Shop from "./Components/Shop";
 import Error from "./utils/error";
@@ -27,11 +26,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/shop",
-        element: <Shop />,
+        element: <Shop/>,
       },
       {
         path: "/cart",

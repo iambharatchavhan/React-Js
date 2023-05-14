@@ -14,7 +14,7 @@ const EmptyCart =( )=>{
     You haven't added any items to your cart yet.
   </p>
   <Link
-    to="/shop"
+    to="/"
     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
   >
     Continue Shopping
