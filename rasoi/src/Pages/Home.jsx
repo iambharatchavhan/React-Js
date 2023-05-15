@@ -1,11 +1,11 @@
 import Popular from "../Components/Popular";
-import Veggies from "../Components/Vaggies";
-
+import Vegetarian from "../Components/Vaggies";
 const Home = ()=>{
     return(
        <>
+       <Vegetarian/>
        <Popular/>
-       <Veggies/>
+
        </>
     )
 }
