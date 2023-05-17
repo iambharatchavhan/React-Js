@@ -1,12 +1,13 @@
 import Popular from "../Components/Popular";
 import Vegetarian from "../Components/Vaggies";
-const Home = ()=>{
-    return(
-       <>
-       <Vegetarian/>
-       <Popular/>
+import { motion } from "framer-motion";
 
-       </>
-    )
-}
+const Home = () => {
+  return (
+    <div >
+    <Vegetarian />
+     <Popular />
+    </div>
+  );
+};
 export default Home;

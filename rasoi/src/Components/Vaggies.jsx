@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { Link } from "react-router-dom";
 
 const Vegetarian= () => {
   const [veg, setVeg] = useState([]);
@@ -35,10 +36,14 @@ const Vegetarian= () => {
   return (
     <div>
       <Wrapper>
-        <h1>Carousel Vegetarian</h1>
+        <h1> Top Veg Picks</h1>
         <Splide
           options={{
             perPage: 3,
+  breakpoints: {
+		320: {
+			perPage: 1,
+		},},
             pagination: false,
             arrows: false,
           }}
@@ -46,11 +51,13 @@ const Vegetarian= () => {
           {veg.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
+                 <Link to={"/recipe/" + recipe.id}>
+                <Card> 
                   <img src={recipe.image} alt={recipe.title} />
                   <p>{recipe.title}</p>
                   <Gradient />
                 </Card>
+                </Link>
               </SplideSlide>
             );
           })}
@@ -61,12 +68,16 @@ const Vegetarian= () => {
 };
 
 const Wrapper = styled.div`
- border: 1px solid green;
-  margin: 4rem 0;
+  margin: 1rem 0;
+  h1{
+    font-size:1rem;
+    color:gray;
+    padding:.5rem;
+  }
 `;
 const Card = styled.div`
-  height: 18rem;
-  width: 30rem;
+  height: 12rem;
+  width: 20rem;
   border-radius: 2rem;
   background-color: #cfcfcf;
   display:flex;
@@ -99,6 +110,12 @@ const Card = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media(max-width: 768px) {
+      width:18rem;
+      margin-left:.3rem;
+
+    }
 `;
 const Gradient = styled.div`
   z-index: 3;

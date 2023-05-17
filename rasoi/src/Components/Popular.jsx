@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
+import { Link } from "react-router-dom";
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
@@ -35,10 +36,15 @@ const Popular = () => {
   return (
     <div>
       <Wrapper>
-        <h1>Carousel</h1>
+        <h1>Trending</h1>
         <Splide
           options={{
             perPage: 4,
+            breakpoints: {
+              320: {
+                perPage: 2,
+              },},
+            gap        : '1rem',
             pagination: false,
             arrows: false,
           }}
@@ -46,11 +52,14 @@ const Popular = () => {
           {popular.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
-                <Card>
-                  <img src={recipe.image} alt={recipe.title} />
-                  <p>{recipe.title}</p>
-                  <Gradient />
-                </Card>
+                <Link to={"/recipe/" + recipe.id}>
+                  <Card>
+                    <img src={recipe.image} alt={recipe.title} />
+                    <p>{recipe.title}</p>
+
+                    <Gradient />
+                  </Card>
+                </Link>
               </SplideSlide>
             );
           })}
@@ -61,12 +70,16 @@ const Popular = () => {
 };
 
 const Wrapper = styled.div`
- border: 1px solid green;
-  margin: 4rem 0;
+  margin: 1rem 0;
+  h1 {
+    font-size: 1rem;
+    color: gray;
+    padding: 0.5rem;
+  }
 `;
 const Card = styled.div`
   height: 15rem;
-  width: 20rem;
+  width: 16rem;
   border-radius: 2rem;
   background-color: #cfcfcf;
   overflow: hidden;
@@ -96,6 +109,16 @@ const Card = styled.div`
     justify-content: center;
     align-items: center;
   }
+
+  @media(max-width: 768px) {
+     height:10rem;
+     width:8rem;
+
+  }
+
+
+
+  
 `;
 const Gradient = styled.div`
   z-index: 3;
