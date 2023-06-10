@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 
 const Footer = () => {
@@ -10,12 +11,12 @@ const Footer = () => {
       </div>
       <div className="text-center ">
         <h3 className="lg:font-semibold">Email</h3>
-        <h4>bharatchavhan141@gmail.com</h4>
+        <h4>bharat.chavhan.edu@gmail.com</h4>
       </div>
       <div className="text-center ">
         <h3 className="lg:font-semibold">Follow me</h3>
         <h4>
-          <a href="#">Linkedin</a> | <a href="#">Github</a>
+          <Link to="https://www.linkedin.com/in/bharat-chavhan-563a881ba">Linkedin</Link> | <Link to="https://github.com/iambharatchavhan">Github</Link>
         </h4>
       </div>
       <div className="text-center">
