@@ -1,26 +1,44 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FiCast, FiBell, FiSearch } from "react-icons/fi";
-import { BsArrowLeft, BsMicFill } from "react-icons/bs";
+import { BsArrowLeft, BsMicFill,BsFillSunFill } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
 import logo from "./tubeLogo.jpg";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
-  // const handleISVisible =() =>{
-  //     setIsVisible(false)
-  // }
+  const [theme ,setTheme] = useState(null);
 
-  // const handleIsHindden =() =>{
-  //     setIsVisible(false)
-  // }
+  useEffect(()=>{
+    if (window.matchMedia('(prefers-color-scheme:dark)').matches) {
+      setTheme("dark")
+    }
+
+    // if(window.matchMedia('(prefers-color-scheme:dark)').matches){
+    //   setTheme("dark")
+    // }
+  },[])
+
+  useEffect(()=>{
+    if(theme === "dark"){
+      document.documentElement.classList.add("dark")
+    }
+    else{
+      document.documentElement.classList.remove("dark")
+    }
+  },[theme])
+       
+  const handleTheme = () =>{
+    setTheme(theme === "dark" ? "lite" : "dark")
+  }
+
   return (
-    <div className="md:flex md:justify-between md:items-center md:w-full">
+    <div className="md:flex md:justify-between md:items-center md:w-full dark:bg-[#0F0F0F] dark:text-white">
       <div className={isVisible ? "flex p-3 " : "hidden"}>
         <div className="flex justify-center items-center gap-[3rem] ">
           <div>
-            <GiHamburgerMenu className="text-2xl  text-stone-900 cursor-pointer" />
+            <GiHamburgerMenu className="text-2xl  text-stone-900 cursor-pointer dark:text-white" />
           </div>
           <div className="w-8 flex justify-center items-center">
             <img src={logo} alt="" />
@@ -44,7 +62,7 @@ const Header = () => {
         <BsArrowLeft onClick={() => setIsVisible(true)} />
         <input
           type="text"
-          className="border border-solid border-stone-900 flex-grow rounded-full"
+          className="border border-solid border-stone-900 flex-grow rounded-full dark:text-gray-800"
         />
         <BsMicFill className="bg-gray-300  rounded-full" />
       </div>
@@ -52,22 +70,32 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search"
-          className="border border-solid flex-grow rounded-l-full md:p-[.5rem] md:focus-ring-1 md:pl-8  md:outline-blue-800"
+          className="border border-solid flex-grow rounded-l-full md:p-[.5rem] md:focus-ring-1 md:pl-8  md:outline-blue-800 dark:bg-[#0f0f0f] dark:border-blue-400 dark:outline-none"
         />
-        <div className="border border-solid border-stone-900 -ml-2 rounded-r-full bg-gray-400 md:p-[.7rem] ">
+        <div className="border border-solid border-stone-900 -ml-2 rounded-r-full bg-gray-400 md:p-[.8rem]  dark:border-stone-600 hover:dark:bg-stone-600 dark:bg-[#0f0f0f] ">
           <FiSearch />
         </div>
-        <div className="p-2 border border-solid border-gray-200  rounded-full hover:bg-gray-200">
+        <div className="p-2 border border-solid border-gray-200  rounded-full hover:bg-gray-200  dark:border-stone-600 hover:dark:bg-stone-600 ">
         <BsMicFill />
         </div>
    
       </div>
       <div className="hidden md:flex md:justify-center md:items-center md:text-2xl md:gap-8 md:-mr-[18rem]">
-        <div className="p-1 border border-solid border-gray-200  rounded-full hover:bg-gray-200    ">
+        <div className="p-1 border border-solid border-gray-200  rounded-full hover:bg-gray-200  dark:border-stone-600 hover:dark:bg-stone-600   ">
         <FiBell />
         </div>
-        <div className="p-1 border border-solid border-gray-200  rounded-full hover:bg-gray-200  ">
-        <MdDarkMode />
+        <div className="p-1 border border-solid border-gray-200  rounded-full hover:bg-gray-200  dark:border-stone-600 hover:dark:bg-stone-600 ">
+        {theme === "lite" ?<MdDarkMode  onClick={()=>{handleTheme()}}/>:<BsFillSunFill onClick={()=>{handleTheme()}}/>}
+
+       
+       
+       
+        {/* {if(theme === "dark"){
+        
+        }else{
+     
+          }} */}
+           
         </div>
       
         <h1 className="w-8 h-8 bg-red-500 p-1 rounded-full text-center flex justify-center items-center text-yellow-50 text-lg">

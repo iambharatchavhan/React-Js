@@ -13,31 +13,31 @@ import {FaGamepad} from "react-icons/fa"
 
 const Sidebar = () => {
   return (
-    <div className='md:w-[12rem] md:m-1'> 
+    <div className='md:w-[12rem] md:m-1 dark:bg-[#0F0F0F] dark:text-white'> 
       <div className='md:border-b md:border-solid md:border-gray-500 md:mt-2'>
       <ul className='flex flex-col gap-2'>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><AiFillHome className='text-2xl'/>Home</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><SiSaucelabs className='text-2xl' />Shorts</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><BsCashStack className='text-2xl' />Subscription</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><AiFillHome className='text-2xl'/>Home</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><SiSaucelabs className='text-2xl' />Shorts</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><BsCashStack className='text-2xl' />Subscription</li>
        </ul>
       </div>
-      <div className='md:mt-2'>
+      <div className='md:mt-2 '>
         <h1 className='text-lg'>Explore</h1>
       <ul className='md:border-b md:border-solid md:border-gray-500'>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><BsFire className='text-2xl' />Trending</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'> <BsFillHandbagFill className='text-2xl' />Shopping</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 '> <HiOutlineNewspaper className='text-2xl'/>News</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 '> <GiPoloShirt className='text-2xl'/>Fashion</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 '> <TbCricket className='text-2xl'/>Cricket</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 '> <MdSportsSoccer className='text-2xl'/>Sports</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'> <MdLiveTv className='text-2xl'/> Live</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'> <BsFire className='text-2xl' />Trending</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'> <BsFillHandbagFill className='text-2xl' />Shopping</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727] '> <HiOutlineNewspaper className='text-2xl'/>News</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727] '> <GiPoloShirt className='text-2xl'/>Fashion</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727] '> <TbCricket className='text-2xl'/>Cricket</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727] '> <MdSportsSoccer className='text-2xl'/>Sports</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'>  <MdLiveTv className='text-2xl'/> Live</li>
        </ul>
        <div className='md:border-b md:border-solid md:border-gray-500 md:mt-2'>
        <h1 className='text-lg'>Gaming World</h1>
         <ul>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><SiBoardgamegeek className='text-2xl' />Live Gaming</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><SiWegame className='text-2xl' />GamePlays</li>
-        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2'><FaGamepad className='text-2xl' />Ps Gaming</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><SiBoardgamegeek className='text-2xl' />Live Gaming</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><SiWegame className='text-2xl' />GamePlays</li>
+        <li className='md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><FaGamepad className='text-2xl' />Ps Gaming</li>
         </ul>
        </div>
       </div>
