@@ -5,10 +5,14 @@ import { BsArrowLeft, BsMicFill,BsFillSunFill } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
 import logo from "./tubeLogo.jpg";
 import { useState ,useEffect } from "react";
+import { useDispatch} from "react-redux";
+import { toggleState } from "./utils/appSlice";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [theme ,setTheme] = useState(null);
+
+
 
   useEffect(()=>{
     if (window.matchMedia('(prefers-color-scheme:dark)').matches) {
@@ -33,12 +37,24 @@ const Header = () => {
     setTheme(theme === "dark" ? "lite" : "dark")
   }
 
+
+  //^ -------------------------------------------------
+    const dispatch = useDispatch()
+
+
+    const handleSidebar = ()=>{
+       dispatch(toggleState())
+
+    }
+
+
+  //^ -------------------------------------------------
   return (
-    <div className="md:flex md:justify-between md:items-center md:w-full dark:bg-[#0F0F0F] dark:text-white">
+    <div className=" md:flex md:justify-between md:items-center md:w-full dark:bg-[#0F0F0F] dark:text-white md:sticky md:top-0">
       <div className={isVisible ? "flex p-3 " : "hidden"}>
         <div className="flex justify-center items-center gap-[3rem] ">
           <div>
-            <GiHamburgerMenu className="text-2xl  text-stone-900 cursor-pointer dark:text-white" />
+            <GiHamburgerMenu onClick={()=>handleSidebar()}      className="text-2xl  text-stone-900 cursor-pointer dark:text-white" />
           </div>
           <div className="w-8 flex justify-center items-center">
             <img src={logo} alt="" />
@@ -70,7 +86,7 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search"
-          className="border border-solid flex-grow rounded-l-full md:p-[.5rem] md:focus-ring-1 md:pl-8  md:outline-blue-800 dark:bg-[#0f0f0f] dark:border-blue-400 dark:outline-none"
+          className="border-none outline-none flex-grow rounded-l-full md:p-[.5rem] md:focus-ring-1 md:pl-8  dark:bg-[#0f0f0f]  "
         />
         <div className="border border-solid border-stone-900 -ml-2 rounded-r-full bg-gray-400 md:p-[.8rem]  dark:border-stone-600 hover:dark:bg-stone-600 dark:bg-[#0f0f0f] ">
           <FiSearch />
