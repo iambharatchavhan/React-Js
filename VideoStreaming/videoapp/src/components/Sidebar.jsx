@@ -17,7 +17,7 @@ const Sidebar = () => {
   const isMenuOpen = useSelector((store)=> store.app.isMenuOpen)
 
   return !isMenuOpen ? null :(
-    <div id='sidebar' className=' md:h-screen md:w-[12rem] md:m-1 dark:bg-[#0F0F0F] dark:text-white overflow-y-auto'> 
+    <div id='sidebar' className=' md:h-[90vh] md:w-[14rem] md:m-1 dark:bg-[#0F0F0F] dark:text-white overflow-y-auto md:sticky md:top-14'> 
       <div className='flex ml-4 md:ml-0 md:border-b md:border-solid md:border-gray-500 md:mt-2'>
       <ul className='flex flex-col gap-4 justify-center items-center md:flex md:flex-col md:gap-2'>
         <li className='w-full flex items-center gap-6 md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><AiFillHome className='text-2xl'/>Home</li>
@@ -41,7 +41,8 @@ const Sidebar = () => {
         <ul className='flex flex-col gap-4'>
         <li className='w-full flex items-center gap-6 md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><SiBoardgamegeek className='text-2xl' />Live Gaming</li>
         <li className='w-full flex items-center gap-6 md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><SiWegame className='text-2xl' />GamePlays</li>
-        <li className='w-full flex items-center gap-6 md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><FaGamepad className='text-2xl' />Ps Gaming</li>
+        <li className='w-full flex items-center gap-6 md:flex md:items-center md:gap-4 md:hover:bg-gray-200 md:rounded-lg md:p-2 hover:dark:bg-[#272727]'><SiWegame className='text-2xl' />GOW</li>
+      
         </ul>
        </div>
        

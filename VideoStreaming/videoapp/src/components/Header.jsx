@@ -1,9 +1,8 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { FiCast, FiBell, FiSearch } from "react-icons/fi";
-import { BsArrowLeft, BsMicFill,BsFillSunFill } from "react-icons/bs";
+import { BsArrowLeft, BsMicFill,BsFillSunFill,BsYoutube } from "react-icons/bs";
 import { MdDarkMode } from "react-icons/md";
-import logo from "./tubeLogo.jpg";
 import { useState ,useEffect } from "react";
 import { useDispatch} from "react-redux";
 import { toggleState } from "./utils/appSlice";
@@ -50,18 +49,18 @@ const Header = () => {
 
   //^ -------------------------------------------------
   return (
-    <div className=" md:flex md:justify-between md:items-center md:w-full dark:bg-[#0F0F0F] dark:text-white md:sticky md:top-0">
+    <div className="bg-white md:flex md:justify-between md:items-center md:w-full dark:bg-[#0F0F0F] dark:text-white md:sticky md:top-0">
       <div className={isVisible ? "flex p-3 " : "hidden"}>
-        <div className="flex justify-center items-center gap-[3rem] ">
+        <div className="flex justify-center items-center ">
           <div>
-            <GiHamburgerMenu onClick={()=>handleSidebar()}      className="text-2xl  text-stone-900 cursor-pointer dark:text-white" />
+            <GiHamburgerMenu onClick={()=>handleSidebar()}      className="text-2xl mr-2 text-stone-900 cursor-pointer dark:text-white" />
           </div>
-          <div className="w-8 flex justify-center items-center">
-            <img src={logo} alt="" />
+          <div className=" flex justify-center items-center content-center gap-1">
+             <BsYoutube className="text-2xl text-red-600 mt-1 "/>
             <h1 className="text-xl font-bold">YouTube</h1>
           </div>
         </div>
-        <div className="flex gap-3 justify-center items-center ml-[4rem] text-xl md:hidden">
+        <div className="flex gap-3 justify-center items-center ml-[3rem] text-xl md:hidden">
           <FiCast />
           <MdDarkMode />
           <FiSearch onClick={() => setIsVisible(false)} />{" "}
@@ -86,7 +85,9 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search"
-          className="border-none outline-none flex-grow rounded-l-full md:p-[.5rem] md:focus-ring-1 md:pl-8  dark:bg-[#0f0f0f]  "
+          className=" focus:ring-1 focus:ring-blue-500 focus:outline-none appearance-none w-full text-sm leading-6 text-slate-900 dark:text-slate-200 placeholder-slate-400 rounded-l-full py-[.5rem]  pl-10 pr-4 ring-1 ring-slate-400 shadow-sm truncate dark:bg-[#0f0f0f] "
+
+          // flex-grow rounded-l-full md:p-[.5rem] dark:bg-[#0f0f0f]
         />
         <div className="border border-solid border-stone-900 -ml-2 rounded-r-full bg-gray-400 md:p-[.8rem]  dark:border-stone-600 hover:dark:bg-stone-600 dark:bg-[#0f0f0f] ">
           <FiSearch />
